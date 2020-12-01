@@ -1,0 +1,21 @@
+<div class="page-container">
+  <div class="page-title">
+    <h1>Kanban Boards</h1>
+  </div>
+  <div>
+    <button mat-raised-button (click)="openDialogForNewKanban()">+ Create Kanban</button>
+    <button style="float: right;" mat-raised-button routerLink="/" > Change Background </button>
+        <!-- <button id="cbibtn" onclick="changeimg()">Change Background</button> -->     
+  </div>
+  
+  <div class="main-card">
+    <mat-nav-list>
+      <a mat-list-item *ngFor="let kanban of kanbanList" routerLink="/kanbans/{{kanban.id}}"> 
+        <p class="kanban-title">{{kanban.title}}</p>
+        <input type="button" value="Delete" (click)="deleteRow()" style="position: absolute; right: 0;">
+      </a>
+    </mat-nav-list>
+  </div>
+</div>
+
+
